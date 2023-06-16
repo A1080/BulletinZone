@@ -4,13 +4,15 @@ const bodyParser = require("body-parser");
 const https = require("https");
 const app = express();
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use(express.static(__dirname + "/public/"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
   // console.log("hello!");
 
   res.sendFile(__dirname + "/index.html");
+  
 
   //   res.send("hello!");
 });
